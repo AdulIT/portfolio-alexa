@@ -1,0 +1,81 @@
+.contacts
+{
+    padding: 60px 0 195px;
+    min-height: 700px;
+    background: url('../../img/contacts-bg.jpg') center center/cover no-repeat;
+    .flex-container
+    {
+        width: 100%;
+        justify-content: end;
+    }
+    &__form
+    {
+        width: 450px;
+        gap: 20px;
+        @include flex($fd: column, $ai: end, $jc: space-between, $fw: wrap);
+        &-title
+        {
+            align-self: start;
+            @include title($fz: 40px, $lh: 80px, $color: $base_color);
+            margin-bottom: 40px;
+        }
+        &-input
+        {
+            padding: 5px 0 5px 20px;
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border: 2px solid $base_color;
+            background-color: transparent;
+            color: $base_color;
+        }
+        &-textarea
+        {
+            width: 100%;
+            height: 100px;
+            padding: 5px 20px;
+            outline: none;
+            border: 2px solid $base_color;
+            background-color: transparent;
+            color: $base_color;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        &-btn
+        {
+            margin-top: 30px;
+            align-self: start;
+        }
+        /* WebKit, Edge */
+        ::-webkit-input-placeholder {
+            color: $base_color;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        /* Firefox 4-18 */
+        :-moz-placeholder {
+            color: $base_color;
+            opacity: 1;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        /* Firefox 19+ */
+        ::-moz-placeholder {
+            color: $base_color;
+            opacity: 1;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        /* IE 10-11 */
+        :-ms-input-placeholder {
+            color: $base_color;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        /* Edge */
+        ::-ms-input-placeholder {
+            color: $base_color;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+        /* MODERN BROWSER */
+        ::placeholder {
+            color: $base_color;
+            @include text($fw: 400, $fz: 20px, $lh: 40px, $color: $base_color);
+        }
+    }
+}

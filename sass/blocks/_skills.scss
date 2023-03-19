@@ -1,0 +1,28 @@
+.skills
+{
+    min-height: 482px;
+    padding-top: 100px;
+    .flex-container
+    {
+        margin-top: 60px;
+        row-gap: 60px;
+    }
+    &__card
+    {
+
+        width: 320px;
+        height: 240px;
+        text-align: center;
+        margin: 0 auto;
+        &-title
+        {
+            margin: 50px 0 20px;
+            @include title($fz: 20px, $lh: 40px, $color: #fff);
+            font-family: 'Inter';
+        }
+        &-text
+        {
+            @include text($fw: 400, $fz: 18px, $lh: 36px, $color: #fff);
+        }
+    }
+}

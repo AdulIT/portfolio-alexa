@@ -1,0 +1,31 @@
+.price
+{
+    min-height: 845px;
+    padding: 100px 0;
+    .flex-container
+    {
+        margin-top: 60px;
+        row-gap: 60px;
+    }
+    &__card
+    {
+        width: 450px;
+        height: 505px;
+        padding: 43px 0 41px;
+        @include flex($fd: column, $ai: center, $jc: space-between);
+        border: 3px solid $base_color;
+        text-align: center;
+        &-title
+        {
+            @include title($fz: 28px, $lh: 56px, $color: #fff);
+        }
+        &-cost
+        {
+            @include title($fz: 24px, $lh: 48px, $color: $base_color);
+        }
+        &-list__item
+        {
+            @include text($fw: 400, $fz: 18px, $lh: 36px, $color: #fff);
+        }
+    }
+}

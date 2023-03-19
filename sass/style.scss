@@ -1,0 +1,99 @@
+@import './base/variables';
+@import './base/mixins';
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+}
+
+body
+{
+    background-color: #000;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+button
+{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+svg path
+{
+    transition: fill 0.5s;
+    cursor: pointer;
+}
+svg path:hover
+{
+    fill: $base_color;
+}
+
+
+.container
+{
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.flex-container
+{
+    @include flex;
+}
+
+.btn
+{
+    margin-top: 25px;
+    width: 220px;
+    height: 55px;
+    background-color: $base_color;
+    text-align: center;
+    @include text($fw: 400, $fz: 20px, $lh: 40px, $color: #000);
+    transition: color 0.4s;
+    &:hover
+    {
+        color: #fff;
+    }
+}
+
+.title-section
+{
+    @include flex($jc: center);
+    span
+    {
+        display: block;
+        width: 274px;
+        height: 2px;
+        background-color: $base_color;
+    }
+    .title
+    {
+        margin: 0 20px;
+        text-align: center;
+        @include title($fz: 60px, $lh: 120px, $color: $base_color);
+    }
+}
+
+
+@import './blocks/header';
+@import './blocks/about';
+@import './blocks/skills';
+@import './blocks/portfolio';
+@import './blocks/video';
+@import './blocks/price';
+@import './blocks/contacts';
+@import './blocks/footer';
+@import './blocks/media';

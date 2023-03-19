@@ -1,0 +1,218 @@
+@media screen and (max-width: 1399px)
+{
+    .container
+    {
+        width: 1140px;
+    }
+    .portfolio
+    {
+        &__projects
+        {
+            grid-template-columns: repeat(2, minmax(auto, 450px));
+            place-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .container
+    {
+        width: 960px;
+    }    
+}
+
+@media screen and (max-width: 991px)
+{
+    .container
+    {
+        width: 720px;
+    }
+
+    .header
+    {
+        .nav
+        {
+            .menu
+            {
+                display: none;
+                padding: 134px 343px 0 127px;
+                gap: 16px;
+                align-items: start;
+                justify-content: start;
+                position: fixed;
+                top: 0;
+                right: 0;
+                flex-direction: column;
+                width: 80%;
+                height: 100vh;
+                background-color: #000;
+                &__link
+                {
+                    @include text($fw: 400, $fz: 35px, $lh: 73px, $color: #fff);
+                }
+            }
+            .hamburger
+            {
+                display: block;
+                margin-left: 20px;
+            }
+            .close
+            {
+                position: fixed;
+                top: 20px;
+                right: 64px;
+                display: none;
+            }
+        }
+    }
+
+    .about
+    {
+        &__title
+        {
+            font-weight: 400;
+            @include title($fz: 32px, $lh: 64px, $color: #fff);
+        }
+        &__descr
+        {
+            margin: 20px 0 60px;
+            @include text($fw: 400, $fz: 20px, $lh: 24px, $color: #fff);
+        }
+    }
+
+    .skills
+    {
+        padding-top: 95px;
+    }
+
+    .title-section
+    {
+        span
+        {
+            width: 117px;
+            height: 2px;
+        }
+        .title
+        {
+            @include title($fz: 32px, $lh: 40px, $color: $base_color);
+        }
+    }
+
+    .portfolio
+    {
+        .tabs-container
+        {
+            width: 445px;
+            gap: 5px;
+        }
+        &__projects {
+            grid-template-columns: minmax(auto, 450px);
+        }
+    }
+    .video
+    {
+        .container
+        {
+            width: 100%;
+        }
+    }
+
+    .btn
+    {
+        margin-top: 0;
+    }
+
+    .price__card {
+        margin: 0 auto;
+    }
+
+    .contacts
+    {
+        .flex-container
+        {
+            justify-content: center;
+        }
+        &__form
+        {
+            &-title, &-btn
+            {
+                align-self: center;
+            }
+            &-input, &-textarea
+            {
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+
+    .footer
+    {
+        padding: 28px 0;
+        .flex-container
+        {
+            margin: 0 auto;
+            width: 210px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .container
+    {
+        width: 540px;
+    }
+    .about
+    {
+        background: url('../img/bg-sm.png') center center/cover no-repeat;
+    }
+    .contacts
+    {
+        background: url('../img/contacts-sm-bg.png') center center/cover no-repeat;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .container
+    {
+        width: 300px;
+    }
+    .btn
+    {
+        width: 146px;
+        font-size: 18px;
+    }
+    .about
+    {
+        &__title
+        {
+            font-size: 30px;
+            line-height: 60px;
+        }
+        &__descr
+        {
+            width: auto;
+        }
+    }
+    .portfolio__project_img
+    {
+        width: 100%;
+    }
+    .title-section
+    {
+        span
+        {
+            width: 50px;
+        }
+    }
+
+    .price__card
+    {
+        height: 470px;
+        padding: 20px 0 41px;
+        &-list__item {
+            line-height: 30px;
+        }
+    }
+}

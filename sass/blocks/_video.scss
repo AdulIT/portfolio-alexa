@@ -1,0 +1,208 @@
+.video
+{
+    padding-top: 100px 20px 0;
+    &-play
+    {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    &-project
+    {
+        position: relative;
+        margin-top: 60px;
+        width: 100%;
+        // height: 100vh;
+    }
+    &-container
+    {
+        margin: 0 auto;
+        position: relative;
+        aspect-ratio: 16 / 9;
+        width: 98%;
+        max-width: 1400px;
+        // max-height: 705px;
+        overflow: hidden;
+        &.fullscreen
+        {
+            max-width: 100%;
+            width: 100%;
+            height: 100vh;
+        }
+        &.show-controls
+        {
+            .wrapper
+            {
+                bottom: 0;
+                opacity: 1;
+                pointer-events: auto;
+                transition: all 0.13s ease;
+            }
+        }
+        .wrapper
+        {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -15px;
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.08s ease;
+            &::before
+            {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: calc(100% + 35px);
+                z-index: -1;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            }
+            .video-timeline
+            {
+                height: 7px;
+                width: 100%;
+                cursor: pointer;
+                .progress-area
+                {
+                    height: 3px;
+                    background: $base_color;
+                    position: relative;
+                    span
+                    {
+                        position: absolute;
+                        left: 50%;
+                        top: -25px;
+                        font-size: 13px;
+                        color: #fff;
+                        transform: translateX(-50%);
+                    }
+                    .progress-bar
+                    {
+                        width: 0%;
+                        height: 100%;
+                        position: relative;
+                        background-color: #ffffff;
+                        &::before
+                        {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            height: 13px;
+                            width: 13px;
+                            background: inherit;
+                            border-radius: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+            .video-timeline:hover .progress-area span,
+            .video-timeline:hover .progress-area .progress-bar::before
+            {
+                display: block;
+            }
+
+            .progress-area span,
+            .progress-area .progress-bar::before
+            {
+                display: none;
+            }
+        }
+        .video-controls, .video-timer, .options
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-controls
+        {
+            padding: 5px 20px 10px;
+            .options
+            {
+                width: 100%;
+                .volume
+                {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+                button
+                {
+                    width: 40px;
+                    height: 40px;
+                    color: $base_color;
+                    font-size: 19px;
+                    background: none;
+                    :where(i, span)
+                    {
+                        width: 100%;
+                        height: 100%;
+                        line-height: 40px;
+                    }
+                }
+                &:first-child
+                {
+                    justify-content: flex-start;
+                }
+                &:last-child
+                {
+                    justify-content: flex-end;
+                }
+                input
+                {
+                    height: 4px;
+                    max-width: 75px;
+                }
+                .video-timer
+                {
+                    font-size: 14px;
+                    color: $base_color;
+                    margin-left: 15px;
+                    .separator
+                    {
+                        font-size: 16px;
+                        margin: 0 5px;
+                    }
+                }
+                .playback-content
+                {
+                    position: relative;
+                    .speed-options
+                    {
+                        position: absolute;
+                        background: #fff;
+                        bottom: 40px;
+                        left: -40px;
+                        width: 95px;
+                        border-radius: 4px;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 0.13s ease;
+                        li
+                        {
+                            font-family: 'Inter', sans-serif;
+                            font-size: 14px;
+                            padding: 5px 0 5px 15px;
+                            cursor: pointer;
+                            &.active
+                            {
+                                color: #fff;
+                                background: $base_color;
+                            }
+                        }
+                    }
+                    .speed-options.show
+                    {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+    }
+}

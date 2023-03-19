@@ -1,0 +1,16 @@
+.about
+{
+    margin-top: -90px;
+    padding: 250px 80px;
+    min-height: 100vh;
+    background: url('../img/bg.jpg') center center/cover no-repeat;
+    &__title
+    {
+        @include title($fz: 60px, $lh: 120px, $color: #fff);
+    }
+    &__descr
+    {
+        width: 470px;
+        @include text($fw: 400, $fz: 20px, $lh: 40px, $color: #fff);
+    }
+}

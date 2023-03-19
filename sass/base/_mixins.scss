@@ -1,0 +1,26 @@
+@mixin flex($fd: row, $ai: center, $jc: space-between, $fw: wrap)
+{
+    display: flex;
+    flex-direction: $fd;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-wrap: $fw;
+}
+
+@mixin title($fw: 700, $fz, $lh, $color)
+{
+    font-family: $merriweather;
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+    color: $color;
+}
+
+@mixin text($fw, $fz, $lh, $color)
+{
+    font-family: $inter;
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+    color: $color;
+}

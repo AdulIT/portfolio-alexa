@@ -1,0 +1,51 @@
+.header
+{
+    padding: 20px 0;
+    height: 90px;
+    &__logo
+    {
+        cursor: pointer;
+        &:hover
+        {
+            fill: $base_color;
+        }
+    }
+    .nav
+    {
+        @include flex;
+        .menu
+        {
+            width: 500px;
+            @include flex($jc: space-around);
+            &__link
+            {
+                @include text($fw: 400, $fz: 20px, $lh: 50px, $color: #fff);
+                transition: color 0.4s;
+                &:hover
+                {
+                    color: $base_color;
+                }
+            }
+        }
+        .langs
+        {
+            @include text($fw: 700, $fz: 20px, $lh: 50px, $color: #fff);
+            cursor: pointer;
+            .lang
+            {
+                &-active
+                {
+                    color: $base_color;
+                }
+            }
+        }
+        .hamburger
+        {
+            display: none;
+        }
+        .close
+        {
+            display: none;
+        }
+    }
+}

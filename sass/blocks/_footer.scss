@@ -1,0 +1,27 @@
+.footer
+{
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    &__privacy
+    {
+        display: flex;
+        width: 182px;
+        justify-content: space-between;
+        &-text
+        {
+            @include text($fw: 400, $fz: 20px, $lh: 50px, $color: #fff);
+        }
+    }
+    &__rss
+    {
+        @include text($fw: 400, $fz: 20px, $lh: 50px, $color: #fff);   
+    }
+    &__socials
+    {
+        @include flex($fd: row, $ai: center, $jc: space-between);
+        gap: 20px;
+        cursor: pointer;
+    }
+}
