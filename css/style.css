@@ -194,7 +194,7 @@ svg path:hover {
 }
 
 .portfolio {
-  padding-top: 100px;
+  padding: 100px 0;
 }
 .portfolio .tabs-container {
   width: 895px;
@@ -222,9 +222,15 @@ svg path:hover {
   grid-auto-rows: 560px;
   gap: 25px;
 }
-.portfolio__project img {
+.portfolio__project {
   max-width: 450px;
   max-height: 560px;
+}
+.portfolio__project img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .portfolio .hide {
   display: none;
@@ -247,6 +253,7 @@ svg path:hover {
   position: relative;
   margin-top: 60px;
   width: 100%;
+  height: 95%;
 }
 .video-container {
   margin: 0 auto;
@@ -450,7 +457,7 @@ svg path:hover {
 .contacts {
   padding: 60px 0 195px;
   min-height: 700px;
-  background: url("../../img/contacts-bg.jpg") center center/cover no-repeat;
+  background: url("../img/contacts-bg.jpg") center center/cover no-repeat;
 }
 .contacts .flex-container {
   width: 100%;
@@ -579,18 +586,19 @@ svg path:hover {
     width: 720px;
   }
   .header .nav .menu {
-    display: none;
     padding: 134px 343px 0 127px;
     gap: 16px;
     align-items: start;
     justify-content: start;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     flex-direction: column;
     width: 80%;
     height: 100vh;
     background-color: #000;
+    transition: right 0.5s ease;
+    z-index: 2;
   }
   .header .nav .menu__link {
     font-family: "Inter";
@@ -599,15 +607,23 @@ svg path:hover {
     line-height: 73px;
     color: #fff;
   }
+  .header .nav .menu-active {
+    right: 0;
+  }
   .header .nav .hamburger {
     display: block;
     margin-left: 20px;
   }
   .header .nav .close {
+    display: block;
     position: fixed;
     top: 20px;
+    right: -100%;
+    transition: right 0.5s ease;
+    z-index: 2;
+  }
+  .header .nav .close-active {
     right: 64px;
-    display: none;
   }
   .about__title {
     font-weight: 400;

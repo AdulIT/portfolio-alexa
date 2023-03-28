@@ -1,6 +1,6 @@
 .portfolio
 {
-    padding-top: 100px;
+    padding: 100px 0;
     .tabs-container
     {
         width: 895px;
@@ -34,10 +34,13 @@
     }
     &__project
     {
+        max-width: 450px;
+        max-height: 560px;
         img
         {
-            max-width: 450px;
-            max-height: 560px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
     .hide

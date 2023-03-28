@@ -3,18 +3,28 @@ const hamburger = document.querySelector('.hamburger'),
       closeBtn = document.querySelector('.close'),
       menu =  document.querySelector('.menu')
 
-
 hamburger.addEventListener('click', () =>
 {
-    menu.style.display = 'block'
-    closeBtn.style.display = 'block'
+    menu.classList.add('menu-active')
+    closeBtn.classList.add('close-active')
 })
 
 closeBtn.addEventListener('click', () =>
 {
-    menu.style.display = 'none'
-    closeBtn.style.display = 'none'
+    menu.classList.remove('menu-active')
+    closeBtn.classList.remove('close-active')
 })
+
+// document.addEventListener('click', (e) =>
+// {
+//     console.log(e.target.classList);
+//     if (!e.target.classList == 'menu')
+//     {
+//         menu.classList.remove('menu-active')
+//         closeBtn.classList.remove('close-active')
+//     }
+// })
+
 
 // Tabs
 const tabsParent = document.querySelector('.tabs-container'),
@@ -64,6 +74,7 @@ tabsParent.addEventListener('click', (e) =>
 
 // Custom Video Player
 const container = document.querySelector('.video-container'),
+      rectContainer = container.getBoundingClientRect(),
       mainVideo = container.querySelector('.video-project'),
       videoTimeline = container.querySelector('.video-timeline'),
       progressBar = container.querySelector('.progress-bar'),
@@ -159,6 +170,46 @@ container.addEventListener('mouseup', () =>
 {
     videoTimeline.removeEventListener('mousemove', draggableProgressBar)
 })
+// console.log(container.pageYOffset)
+
+window.addEventListener('keydown', (e) =>
+{
+    // e.preventDefault()
+    if (e.code === 'Space')
+    {
+        if (mainVideo.paused)
+        {
+            mainVideo.play()
+            videoPlayBtn.style.display = 'none'
+        }
+        else
+        {
+            mainVideo.pause()
+            videoPlayBtn.style.display = 'block'
+        }
+    }
+    else if (e.key === 'Escape')
+    {
+        container.classList.remove('fullscreen')
+        fullscreenBtn.classList.replace('fa-compress', 'fa-expand')
+        return document.exitFullscreen()
+    }
+})
+
+document.addEventListener('click', (e) =>
+{
+    // e.preventDefault()
+    if (e.target.className === 'video-project' && mainVideo.paused)
+    {
+        mainVideo.play()
+        videoPlayBtn.style.display = 'none'
+    }
+    else if (e.target.className === 'video-project' && !(mainVideo.paused))
+    {
+        mainVideo.pause()
+        videoPlayBtn.style.display = 'block'
+    }
+})
 
 videoTimeline.addEventListener('mousemove', (e) =>
 {
@@ -232,10 +283,10 @@ fullscreenBtn.addEventListener('click', () =>
     if (document.fullscreenElement)
     {
         fullscreenBtn.classList.replace('fa-compress', 'fa-expand')
-        return document.exitFullscreen
+        return document.exitFullscreen()
     }
     fullscreenBtn.classList.replace('fa-expand', 'fa-compress')
-    container.requestFullscreen
+    container.requestFullscreen()
 })
 
 skipBackward.addEventListener('click', () =>
